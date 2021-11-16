@@ -1,0 +1,28 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
+[submodule "vim/pack/shapeshed/start/vim-airline"]
+	path = vim/pack/shapeshed/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/tpope/start/surround"]
+	path = vim/pack/tpope/start/surround
+	url = https://tpope.io/vim/surround.git
+[submodule "vim/pack/airblade/start/vim-gitgutter"]
+	path = vim/pack/airblade/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/plugins/start/vim-prettier"]
+	path = vim/pack/plugins/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier
+[submodule "vim/pack/plugins/start/ale"]
+	path = vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "vim/pack/plugins/start/tagbar"]
+	path = vim/pack/plugins/start/tagbar
+	url = https://github.com/preservim/tagbar.git
+[submodule "vim/pack/plugins/start/vim-fugitive"]
+	path = vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/plugins/start/vim-solidity"]
+	path = vim/pack/plugins/start/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
