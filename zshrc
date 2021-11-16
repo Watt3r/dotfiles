@@ -1,0 +1,61 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/loberwager/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+# Stop agnoster from showing default hostname
+DEFAULT_USER="loberwager"
+prompt_context(){}
+
+# Set custom aliases
+source ~/.zshaliases
+
+# Load NVM
+# Slows down startup, node works just fine without it normally
+# [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM
+
+# Case insensitive globbing
+setopt NO_CASE_GLOB
+
+# History 
+setopt EXTENDED_HISTORY
+SAVEHIST=5000
+HISTSIZE=2000
+# share history across multiple zsh sessions
+setopt SHARE_HISTORY
+# append to history
+setopt APPEND_HISTORY
+# adds commands as they are typed, not at shell exit
+setopt INC_APPEND_HISTORY
+# expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+# do not store duplications
+setopt HIST_IGNORE_DUPS
+# removes blank lines from history
+setopt HIST_REDUCE_BLANKS
+# Change up/down history
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+# Confirm autocorrect
+setopt CORRECT
+setopt CORRECT_ALL
+
+# Display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git z yarn-autocompletions)
+
+source $ZSH/oh-my-zsh.sh

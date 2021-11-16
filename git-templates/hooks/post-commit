@@ -1,0 +1,7 @@
+#!/bin/bash
+
+files=(~/sounds/*)
+sound=${files[RANDOM % ${#files[@]}]}
+echo ${sound}
+sleep 1
+afplay -v 1 ${sound} &

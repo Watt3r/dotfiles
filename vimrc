@@ -1,0 +1,74 @@
+syntax on
+
+set ruler
+set updatetime=100
+set nocompatible
+set ai
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set breakindent
+set autoindent
+set bg=dark
+set smartcase
+set smarttab
+set smartindent
+set incsearch
+set backspace=eol,indent,start
+set laststatus=2
+set noshowmode
+set noerrorbells
+set nowrap
+set updatetime=50
+set relativenumber
+set so=7
+set history=500
+
+autocmd BufEnter * :syntax sync fromstart
+
+nmap <leader>D <plug>(YCMHover)
+nmap <F9> :TagbarToggle<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+let g:ycm_auto_hover=''
+let g:airline_powerline_fonts = 1
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+" ALE linter only run on save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+" don't have linters run on opening a file
+let g:ale_lint_on_enter = 0
+
+let g:tagbar_autoclose = 1 
+
+let g:tagbar_type_solidity = {
+    \ 'ctagstype': 'solidity',
+    \ 'kinds' : [
+        \ 'c:contracts',
+        \ 'e:events',
+        \ 'f:functions',
+        \ 'm:mappings',
+        \ 'v:variables',
+    \ ]
+\ }
+function! s:DiffWithSaved()
+  let filetype=&ft
+  diffthis
+  vnew | r # | normal! 1Gdd
+  diffthis
+  exe "setlocal bt=nofile bh=wipe nobl noswf ro ft=" . filetype
+endfunction
+com! DiffSaved call s:DiffWithSaved()
+
+
+if !has('gui_running')
+  set t_Co=256
+endif
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }

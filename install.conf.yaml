@@ -1,0 +1,15 @@
+- clean: ['~']
+
+- link:
+    ~/.gitconfig: gitconfig
+    ~/.git-templates: git-templates
+    ~/.ssh/config:
+        path: ssh/config
+        create: true
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.zprofile: zprofile
+    ~/.zshrc: zshrc
+    ~/sounds: sounds
+
+

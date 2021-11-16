@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/Users/loberwager/Documents/GitHub/trivio'
+let g:netrw_dirhist_8='/Users/loberwager/Documents/ethprj'
+let g:netrw_dirhist_7='/Users/loberwager/Documents/ethprj/mainnet'
+let g:netrw_dirhist_6='/Users/loberwager/Documents/ethprj'
+let g:netrw_dirhist_5='/Users/loberwager/Documents/ethprj/eth'
+let g:netrw_dirhist_4='/Users/loberwager/.vim/plugged'
+let g:netrw_dirhist_3='/Users/loberwager/.vim/plugged/vim-fugitive'
+let g:netrw_dirhist_2='/Users/loberwager/.vim/plugged'
+let g:netrw_dirhist_1='/Users/loberwager/.vim/plugged/ale'
+let g:netrw_dirhist_0='/Users/loberwager/.vim/plugged'
