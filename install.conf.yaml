@@ -11,5 +11,4 @@
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/sounds: sounds
-
-
+    ~/fonts/SourceCodePro: fonts/SourceCodePro
