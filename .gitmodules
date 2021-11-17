@@ -17,12 +17,6 @@
 [submodule "vim/pack/plugins/start/vim-solidity"]
 	path = vim/pack/plugins/start/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
-[submodule "vim/pack/plugins/start/vim-gitgutter"]
-	path = vim/pack/plugins/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/pack/plugins/start/surround"]
-	path = vim/pack/plugins/start/surround
-	url = https://github.com/tpope/vim-surround
 [submodule "oh-my-zsh/custom/plugins/zsh-z"]
 	path = oh-my-zsh/custom/plugins/zsh-z
 	url = https://github.com/agkozak/zsh-z
@@ -32,3 +26,9 @@
 [submodule "vim/pack/plugins/start/vim-airline"]
 	path = vim/pack/plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/plugins/start/vim-gitgutter"]
+	path = vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/plugins/start/surround"]
+	path = vim/pack/plugins/start/surround
+	url = https://github.com/tpope/vim-surround
