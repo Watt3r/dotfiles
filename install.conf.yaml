@@ -1,5 +1,22 @@
 - clean: ['~']
 
+- shell:
+  -
+    description: oh-my-zsh 
+    command: |
+      # Check if oh-my-zsh is installed
+      OMZDIR="$HOME/.oh-my-zsh"
+      if [ ! -d "$OMZDIR" ]; then
+        echo 'Installing oh-my-zsh'
+        /bin/sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      fi
+    stdout: true
+    stderr: true
+
+- create:
+  - ~/fonts
+  - ~/.oh-my-zsh/custom/plugins/
+
 - link:
     ~/.gitconfig: gitconfig
     ~/.git-templates: git-templates
@@ -9,6 +26,36 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
-    ~/.zshrc: zshrc
+    ~/.zshrc: 
+      force: true
     ~/sounds: sounds
     ~/fonts/SourceCodePro: fonts/SourceCodePro
+
+- shell:
+  -
+    description: brew install
+    # Mac
+    command: |
+      if [ "$(uname -s)" = "Darwin" ]; then
+        # Install brew if doesnt exist
+        if ! command -v brew &> /dev/null; then
+          /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
+        brew update
+        brew tap homebrew/bundle
+        brew bundle
+      fi
+    stdout: true
+    stdin: true
+    stderr: true
+  -
+  -
+    description: apt-get install
+    # Linux
+    command: |
+      if [ "$(uname -s)" = "Linux" ]; then
+        sudo apt-get install zsh ripgrep bat 
+      fi
+    stdout: true
+    stdin: true
+    stderr: true
