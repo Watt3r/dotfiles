@@ -17,9 +17,6 @@
 [submodule "vim/pack/plugins/start/vim-solidity"]
 	path = vim/pack/plugins/start/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
-[submodule "vim/pack/plugins/start/vim-airline"]
-	path = vim/pack/plugins/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
 [submodule "vim/pack/plugins/start/vim-gitgutter"]
 	path = vim/pack/plugins/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
@@ -32,3 +29,6 @@
 [submodule "oh-my-zsh/custom/plugins/yarn-autocompletions"]
 	path = oh-my-zsh/custom/plugins/yarn-autocompletions
 	url = https://github.com/g-plane/zsh-yarn-autocompletions
+[submodule "vim/pack/plugins/start/vim-airline"]
+	path = vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git

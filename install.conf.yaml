@@ -28,6 +28,8 @@
     ~/.zprofile: zprofile
     ~/.zshrc: 
       force: true
+    ~/.oh-my-zsh/custom/plugins/zsh-z: oh-my-zsh/custom/plugins/zsh-z
+    ~/.oh-my-zsh/custom/plugins/yarn-autocompletions: oh-my-zsh/custom/plugins/yarn-autocompletions
     ~/sounds: sounds
     ~/fonts/SourceCodePro: fonts/SourceCodePro
 
