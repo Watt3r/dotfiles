@@ -1,0 +1,5 @@
+alias work="cat /dev/urandom | hexdump -C | grep 'ec 0b'"
+# Don't correct test to tests
+alias yarn='nocorrect yarn' 
+
+export TERM=xterm-256color

@@ -1,6 +1,35 @@
 - clean: ['~']
 
+
 - shell:
+  -
+    description: brew install
+    # Mac
+    command: |
+      if [ "$(uname -s)" = "Darwin" ]; then
+        # Install brew if doesnt exist
+        if ! command -v brew &> /dev/null; then
+          /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        fi
+        brew update
+        brew tap homebrew/bundle
+        brew bundle
+      fi
+    stdout: true
+    stdin: true
+    stderr: true
+  -
+    description: apt-get install
+    # Linux
+    command: |
+      if [ "$(uname -s)" = "Linux" ]; then
+        sudo apt-get install zsh ripgrep bat ctags
+        # Set zsh as default shell
+        chsh -s $(which zsh)
+      fi
+    stdout: true
+    stdin: true
+    stderr: true
   -
     description: oh-my-zsh 
     command: |
@@ -26,38 +55,11 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zprofile: zprofile
+    ~/.zshaliases: zshaliases
     ~/.zshrc: 
       force: true
-    ~/.oh-my-zsh/custom/plugins/zsh-z: oh-my-zsh/custom/plugins/zsh-z
-    ~/.oh-my-zsh/custom/plugins/yarn-autocompletions: oh-my-zsh/custom/plugins/yarn-autocompletions
+    ~/.oh-my-zsh/custom/plugins/:
+      glob: true
+      path: oh-my-zsh/custom/plugins/*
     ~/sounds: sounds
     ~/fonts/SourceCodePro: fonts/SourceCodePro
-
-- shell:
-  -
-    description: brew install
-    # Mac
-    command: |
-      if [ "$(uname -s)" = "Darwin" ]; then
-        # Install brew if doesnt exist
-        if ! command -v brew &> /dev/null; then
-          /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        fi
-        brew update
-        brew tap homebrew/bundle
-        brew bundle
-      fi
-    stdout: true
-    stdin: true
-    stderr: true
-  -
-  -
-    description: apt-get install
-    # Linux
-    command: |
-      if [ "$(uname -s)" = "Linux" ]; then
-        sudo apt-get install zsh ripgrep bat 
-      fi
-    stdout: true
-    stdin: true
-    stderr: true
