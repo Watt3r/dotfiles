@@ -1,0 +1,18 @@
+matrix:
+  include:
+
+    - name: Test on GNU/Linux
+      os: linux
+      dist: focal 
+      sudo: true 
+      script:
+        - set -e
+        - bash install  # Test dotfile setup
+
+    - name: Test on Mac OS X
+      os: osx
+      osx_image: xcode13.1
+      sudo: required
+      script:
+        - set -e
+        - bash install  # Test dotfile setup
