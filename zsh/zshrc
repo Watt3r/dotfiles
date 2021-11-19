@@ -5,9 +5,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
-# Stop agnoster from showing default hostname
-DEFAULT_USER="loberwager"
-prompt_context(){}
 
 # Set custom aliases
 source ~/.zshaliases
@@ -59,3 +56,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git z yarn-autocompletions)
 
 source $ZSH/oh-my-zsh.sh
+
+# Stop agnoster from showing default hostname
+prompt_context(){}

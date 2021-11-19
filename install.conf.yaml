@@ -14,6 +14,7 @@
         brew update
         brew tap homebrew/bundle
         brew bundle
+        ./osx-preferences.sh
       fi
     stdout: true
     stdin: true
@@ -47,19 +48,23 @@
   - ~/.oh-my-zsh/custom/plugins/
 
 - link:
-    ~/.gitconfig: gitconfig
-    ~/.git-templates: git-templates
+    ~/.gitconfig: git/gitconfig
+    ~/.git-templates: git/git-templates
+    ~/.gitignore_global: git/gitignore
     ~/.ssh/config:
         path: ssh/config
         create: true
-    ~/.vim: vim
-    ~/.vimrc: vimrc
-    ~/.zprofile: zprofile
-    ~/.zshaliases: zshaliases
+    ~/.vim/pack: 
+        path: vim/pack
+        create: true
+    ~/.vimrc: vim/vimrc
+    ~/.zprofile: zsh/zprofile
+    ~/.zshaliases: zsh/zshaliases
     ~/.zshrc: 
+      path: zsh/zshrc
       force: true
     ~/.oh-my-zsh/custom/plugins/:
       glob: true
-      path: oh-my-zsh/custom/plugins/*
+      path: zsh/oh-my-zsh/custom/plugins/*
     ~/sounds: sounds
     ~/fonts/SourceCodePro: fonts/SourceCodePro
