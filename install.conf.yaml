@@ -17,7 +17,6 @@
         ./osx-preferences.sh
       fi
     stdout: true
-    stdin: true
     stderr: true
   -
     description: apt-get install
@@ -29,7 +28,6 @@
         chsh -s $(which zsh)
       fi
     stdout: true
-    stdin: true
     stderr: true
   -
     description: oh-my-zsh 
@@ -44,7 +42,6 @@
     stderr: true
 
 - create:
-  - ~/fonts
   - ~/.oh-my-zsh/custom/plugins/
 
 - link:
@@ -67,4 +64,3 @@
       glob: true
       path: zsh/oh-my-zsh/custom/plugins/*
     ~/sounds: sounds
-    ~/fonts/SourceCodePro: fonts/SourceCodePro

@@ -2,6 +2,7 @@
 brew "bat"
 brew 'ctags'
 brew "ripgrep"
+brew "svn"
 
 
 # General Applications
@@ -14,4 +15,5 @@ cask "spotify"
 cask "dozer"
 
 # Fonts
+tap "homebrew/cask-fonts"
 cask 'font-source-code-pro-for-powerline'
