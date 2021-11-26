@@ -3,7 +3,12 @@ brew "bat"
 brew 'ctags'
 brew "ripgrep"
 brew "svn"
-
+brew "python@3.9"
+brew "curl"
+brew "nginx"
+brew "node"
+brew "redis"
+brew "yarn"
 
 # General Applications
 cask "github"
