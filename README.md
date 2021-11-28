@@ -51,6 +51,7 @@ cd dotfiles
   - iTerm2
   - Spotify
 - Preferences
+  - Lots of system preferences changes, commented in [`osx-preferences.sh`](osx-preferences.sh)
   - Change background
 ### ⚠ Not automated
 Tell iTerm2 to use the config file in the root of this repo
