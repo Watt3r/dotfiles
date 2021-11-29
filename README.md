@@ -2,9 +2,7 @@
 
 ## Install
 ```
-git clone --recurse-submodules git@github.com:Watt3r/dotfiles.git
-cd dotfiles
-./install
+sh -c "$(curl -fsSL https://lucas.tools/install)"
 ```
 
 
