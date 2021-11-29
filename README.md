@@ -37,9 +37,9 @@ sh -c "$(curl -fsSL https://lucas.tools/install)"
     - vim-solidity
   - vimrc
 
-
 ### Fonts
 - Source Code Pro for Powerline
+
 
 ## Mac Only install
 - Applications
@@ -51,8 +51,3 @@ sh -c "$(curl -fsSL https://lucas.tools/install)"
 - Preferences
   - Lots of system preferences changes, commented in [`osx-preferences.sh`](osx-preferences.sh)
   - Change background
-### ⚠ Not automated
-Tell iTerm2 to use the config file in the root of this repo
-```
-General -> Preferences -> Load preferences from a custom foler or URL
-```
