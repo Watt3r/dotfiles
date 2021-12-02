@@ -51,3 +51,4 @@ sh -c "$(curl -fsSL https://lucas.tools/install)"
 - Preferences
   - Lots of system preferences changes, commented in [`osx-preferences.sh`](osx-preferences.sh)
   - Change background
+  - This is all reversible! Just run `osx-backup.sh` to restore your original preferences

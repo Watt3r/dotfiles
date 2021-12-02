@@ -72,9 +72,11 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 killall Dock
 
 # Set iTerm custom settings
+echo "defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool $(defaults read com.googlecode.iterm2 LoadPrefsFromCustomFolder)" >> osx-backup.sh
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 echo "defaults write com.googlecode.iterm2 PrefsCustomFolder -string $(defaults read com.googlecode.iterm2 PrefsCustomFolder)" >> osx-backup.sh
-
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$(pwd)/iTerm"
+
 # Quit printer app when done
 echo "defaults write com.apple.print.PrintingPrefs \"Quit When Finished\" -bool $([ $(defaults read com.apple.print.PrintingPrefs "Quit When Finished" ) == 1 ] && echo "true" || echo "false")" >> osx-backup.sh
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
