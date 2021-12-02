@@ -1,8 +1,14 @@
 # dotfiles
 
 ## Install
+Macos
 ```
 sh -c "$(curl -fsSL https://lucas.tools/install)"
+```
+
+Linux
+```
+sh -c "$(wget -O - https://lucas.tools/install)"
 ```
 
 
