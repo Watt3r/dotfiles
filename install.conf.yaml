@@ -23,7 +23,7 @@
     # Linux
     command: |
       if [ "$(uname -s)" = "Linux" ]; then
-        sudo apt-get install zsh ripgrep bat ctags
+        sudo apt-get install zsh ripgrep bat ctags nodejs
         # Set zsh as default shell
         chsh -s $(which zsh)
       fi
