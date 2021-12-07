@@ -9,6 +9,7 @@ brew "nginx"
 brew "node"
 brew "redis"
 brew "yarn"
+brew "prettier"
 
 # General Applications
 cask "github"

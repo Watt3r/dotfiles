@@ -32,3 +32,6 @@
 [submodule "zsh/oh-my-zsh/custom/plugins/zsh-z"]
 	path = zsh/oh-my-zsh/custom/plugins/zsh-z
 	url = https://github.com/agkozak/zsh-z
+[submodule "vim/pack/plugins/start/vim-easy-align"]
+	path = vim/pack/plugins/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align

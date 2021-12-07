@@ -36,6 +36,8 @@ nnoremap <C-H> <C-W><C-H>
 let g:ycm_auto_hover=''
 let g:airline_powerline_fonts = 1
 
+au FileType markdown vmap <leader><Bar> :EasyAlign*<Bar><Enter>
+
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 " ALE linter only run on save
