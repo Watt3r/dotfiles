@@ -44,10 +44,6 @@ defaults write com.apple.dock tilesize -int 16
 echo "defaults write com.apple.dock show-process-indicators -bool $([ $(defaults read com.apple.dock show-process-indicators ) == 1 ] && echo "true" || echo "false")" >> osx-backup.sh
 defaults write com.apple.dock show-process-indicators -bool false
 
-# Remove all apps from dock
-echo "defaults write com.apple.dock persistent-apps -array $(defaults read com.apple.dock persistent-apps | tr -d '\n')" >> osx-backup.sh
-defaults write com.apple.dock persistent-apps -array
-
 # Show only active items in dock
 echo "defaults write com.apple.dock static-only -bool $([ $(defaults read com.apple.dock static-only ) == 1 ] && echo "true" || echo "false")" >> osx-backup.sh
 defaults write com.apple.dock static-only -bool true
