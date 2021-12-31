@@ -23,6 +23,8 @@ set updatetime=50
 set relativenumber
 set so=7
 set history=500
+set wildmode=longest,list,full
+set wildmenu
 
 autocmd BufEnter * :syntax sync fromstart
 
@@ -32,6 +34,18 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
 
 let g:ycm_auto_hover=''
 let g:airline_powerline_fonts = 1
