@@ -16,6 +16,7 @@ cask "github"
 cask "google-chrome"
 cask "iterm2"
 cask "spotify"
+cask "tunnelblick"
 
 # System Helpers
 cask "dozer"
