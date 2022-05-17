@@ -65,3 +65,5 @@
       glob: true
       path: zsh/oh-my-zsh/custom/plugins/*
     ~/sounds: sounds
+    ~/.eslintrc.json: lint/eslintrc.json
+    ~/.solhint.json: lint/solhint.json
