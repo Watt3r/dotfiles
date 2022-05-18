@@ -35,3 +35,6 @@
 [submodule "vim/pack/plugins/start/vim-easy-align"]
 	path = vim/pack/plugins/start/vim-easy-align
 	url = https://github.com/junegunn/vim-easy-align
+[submodule "vim/pack/plugins/start/vim-test"]
+	path = vim/pack/plugins/start/vim-test
+	url = https://github.com/vim-test/vim-test
