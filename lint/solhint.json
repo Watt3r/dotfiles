@@ -5,7 +5,7 @@
     "avoid-tx-origin": "warn",
     "bracket-align": false,
     "code-complexity": false,
-    "compiler-fixed": false,
+    "compiler-version": false,
     "const-name-snakecase": "error",
     "expression-indent": "error",
     "function-max-lines": false,
@@ -17,7 +17,8 @@
     "separate-by-one-line-in-contract": "error",
     "space-after-comma": "error",
     "statement-indent": "error",
-    "no-empty-blocks": false
+    "no-empty-blocks": false,
+    "ignoreConstructors": true
   },
   "plugins": ["prettier"]
 }
