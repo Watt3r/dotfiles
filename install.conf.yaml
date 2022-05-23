@@ -41,6 +41,19 @@
       fi
     stdout: true
     stderr: true
+  -
+    description: npm install
+    command: |
+      npm install -g nodemon eslint solhint solhint-plugin-prettier prettier-plugin-solidity
+    stdout: true
+    stderr: true
+  -
+    description: python install
+    command: |
+      pyenv install 3.10.4
+      pyenv global 3.10.4
+    stdout: true
+    stderr: true
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/

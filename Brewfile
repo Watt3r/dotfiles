@@ -3,7 +3,7 @@ brew "bat"
 brew 'ctags'
 brew "ripgrep"
 brew "svn"
-brew "python@3.9"
+brew "pyenv"
 brew "curl"
 brew "nginx"
 brew "node"
