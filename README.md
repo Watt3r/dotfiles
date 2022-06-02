@@ -41,7 +41,11 @@ sh -c "$(wget -O - https://lucas.tools/install)"
     - vim-gitgutter
     - vim-prettier
     - vim-solidity
+    - vim-test
   - vimrc
+
+To add vim plugins, use git submodules.
+Ex: `git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/start/vim-test` 
 
 ### Fonts
 - Source Code Pro for Powerline
