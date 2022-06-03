@@ -54,6 +54,12 @@
       pyenv global 3.10.4
     stdout: true
     stderr: true
+  -
+    description: set upstream 
+    command: |
+      curl https://pyenv.run | bash
+    stdout: true
+    stderr: true
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/
