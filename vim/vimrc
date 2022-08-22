@@ -10,6 +10,7 @@ set softtabstop=2
 set breakindent
 set autoindent
 set bg=dark
+set ignorecase
 set smartcase
 set smarttab
 set smartindent
