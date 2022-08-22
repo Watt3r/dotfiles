@@ -2,3 +2,4 @@
 vim/.netrwhist
 *.swp
 osx-backup*.sh
+Brewfile.lock.json

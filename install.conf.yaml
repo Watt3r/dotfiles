@@ -50,6 +50,9 @@
   -
     description: python install
     command: |
+      if [ "$(uname -s)" = "Linux" ]; then
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+      fi
       pyenv install 3.10.4
       pyenv global 3.10.4
     stdout: true
@@ -75,6 +78,7 @@
         path: vim/pack
         create: true
     ~/.vimrc: vim/vimrc
+    ~/.screenrc: screen/screenrc
     ~/.zprofile: zsh/zprofile
     ~/.zshaliases: zsh/zshaliases
     ~/.zshrc: 
