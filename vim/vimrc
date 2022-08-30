@@ -29,6 +29,8 @@ set wildmenu
 
 autocmd BufEnter * :syntax sync fromstart
 
+filetype plugin indent on
+
 nmap <leader>D <plug>(YCMHover)
 nmap <F9> :TagbarToggle<CR>
 nnoremap <C-J> <C-W><C-J>
