@@ -27,14 +27,16 @@ Temporary Items
 .apdisk
 
 ### Python ###
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
 db.sqlite3
 .venv
 
-# Vim
+### Node/Typescript/Javascript ###
+node_modules/
+
+### Vim ###
 *.sw?
 Session.vim
 Sessionx.vim
