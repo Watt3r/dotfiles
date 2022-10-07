@@ -36,6 +36,9 @@ setopt HIST_REDUCE_BLANKS
 # Change up/down history
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+# Alt-left and Alt-right move words
+bindkey '^[^[[D' backward-word
+bindkey '^[^[[C' forward-word
 
 # Confirm autocorrect
 setopt CORRECT
