@@ -21,11 +21,17 @@ set noshowmode
 set noerrorbells
 set nowrap
 set updatetime=50
-set relativenumber
 set so=7
 set history=500
 set wildmode=longest,list,full
 set wildmenu
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 autocmd BufEnter * :syntax sync fromstart
 
