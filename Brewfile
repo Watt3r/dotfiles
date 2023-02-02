@@ -10,16 +10,29 @@ brew "node"
 brew "redis"
 brew "yarn"
 brew "prettier"
+brew "git-lfs"
+brew "mosh"
+brew "fzf"
+
+cask "flutter"
 
 # General Applications
-cask "github"
+tap "homebrew/cask"
+
 cask "google-chrome"
-cask "iterm2"
 cask "spotify"
-cask "tunnelblick"
+cask "numi"
+
+# Coding Applications
+cask "iterm2"
+cask "github"
+cask "viscosity"
+cask "db-browser-for-sqlite"
+cask "docker"
 
 # System Helpers
 cask "dozer"
+cask "keepingyouawake"
 
 # Fonts
 tap "homebrew/cask-fonts"
