@@ -13,6 +13,7 @@ brew "prettier"
 brew "git-lfs"
 brew "mosh"
 brew "fzf"
+brew "kubectl"
 
 cask "flutter"
 
