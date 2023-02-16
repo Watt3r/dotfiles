@@ -37,4 +37,4 @@ cask "keepingyouawake"
 
 # Fonts
 tap "homebrew/cask-fonts"
-cask 'font-source-code-pro-for-powerline'
+cask 'font-hack'
