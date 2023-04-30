@@ -14,6 +14,7 @@ brew "git-lfs"
 brew "mosh"
 brew "fzf"
 brew "kubectl"
+brew "lastpass-cli"
 
 cask "flutter"
 
