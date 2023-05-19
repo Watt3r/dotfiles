@@ -39,6 +39,10 @@ filetype plugin indent on
 
 nmap <leader>D <plug>(YCMHover)
 nmap <F9> :TagbarToggle<CR>
+nmap <leader>e :lnext<CR>
+nmap gr :GoReferrers<CR>
+vnoremap <leader>u "0y:%s/<C-r>0/<C-R>=substitute(system('uuidgen'), '\n$','', '')<CR>/g<CR>
+nmap T :GoCoverageToggle -gcflags=-l<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -60,6 +64,11 @@ let g:ycm_auto_hover=''
 let g:airline_powerline_fonts = 1
 
 au FileType markdown vmap <leader><Bar> :EasyAlign*<Bar><Enter>
+au FileType cucumber vmap <leader><Bar> :EasyAlign*<Bar><Enter>
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 
 let test#strategy = "vimterminal"
 
