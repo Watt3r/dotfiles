@@ -5,7 +5,6 @@ brew "ripgrep"
 brew "svn"
 brew "pyenv"
 brew "curl"
-brew "nginx"
 brew "node"
 brew "redis"
 brew "yarn"
@@ -16,6 +15,7 @@ brew "fzf"
 brew "kubectl"
 brew "lastpass-cli"
 brew "go"
+brew "mypy"
 
 cask "flutter"
 
@@ -25,6 +25,7 @@ tap "homebrew/cask"
 cask "google-chrome"
 cask "spotify"
 cask "numi"
+cask "lastpass"
 
 # Coding Applications
 cask "iterm2"
