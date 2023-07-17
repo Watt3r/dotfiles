@@ -13,7 +13,6 @@ brew "git-lfs"
 brew "mosh"
 brew "fzf"
 brew "kubectl"
-brew "lastpass-cli"
 brew "go"
 brew "mypy"
 
@@ -22,10 +21,10 @@ cask "flutter"
 # General Applications
 tap "homebrew/cask"
 
-cask "google-chrome"
 cask "spotify"
 cask "numi"
-cask "lastpass"
+cask "1password-cli"
+cask "1password"
 
 # Coding Applications
 cask "iterm2"

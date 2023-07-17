@@ -1,6 +1,7 @@
 [user]
 	email = git@lucas.tools
 	name = Watt3r
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0+vPKtwpuyToKBs7JcUtkCV9slkMRbHm61ZHCr5PDBuQ2n88WH8RGH1DJlCpcA1dAPtBvhwggdqxj/4vWLyfUK/wtyua44s7FePmR1YDPkAVOc+LvQHD8xlbSp0vdTKCtBYblf8P3nuCJpcq1NQ+eVn3rInWMndUjY5rod+AQ+i/OlbKhLlMcaIM0hj3sbias1Xmh4n2TyzhB+503mG+DaE1tvUJcmqlU5ndN7OwbIj10/xC2+3ycJSaeoLVdSU4NjDiGNJ+YOhkiVBayYtSAl/w4/QX1lMqINxvlTWygxi40FTl6UjiL+1GJWA+ANtIXUfq5ApFazLIjE5N+yhAn
 
 [core]
 	excludesfile = ~/.gitignore_global
@@ -11,7 +12,7 @@
 [http]
 	postBuffer = 157286400
 [commit]
-	gpgsign = false
+	gpgsign = true
 [init]
 	templatedir = ~/.git-templates
 
@@ -21,3 +22,7 @@
 [alias]
     ci = commit -v
     pb = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
