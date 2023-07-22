@@ -47,3 +47,9 @@
 [submodule "vim/pack/plugins/start/vim-go"]
 	path = vim/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "vim/pack/plugins/start/vim-coverage"]
+	path = vim/pack/plugins/start/vim-coverage
+	url = https://github.com/google/vim-coverage.git
+[submodule "vim/pack/plugins/start/vim-maktaba"]
+	path = vim/pack/plugins/start/vim-maktaba
+	url = https://github.com/google/vim-maktaba.git
