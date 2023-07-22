@@ -55,9 +55,9 @@ Ex: `git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/sta
 - Applications
   - Dozer
   - Github Desktop
-  - Google Chrome
   - iTerm2
   - Spotify
+  - 1Password
 - Preferences
   - Lots of system preferences changes, commented in [`osx-preferences.sh`](osx-preferences.sh)
   - Change background
