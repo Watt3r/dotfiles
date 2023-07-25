@@ -53,3 +53,6 @@
 [submodule "vim/pack/plugins/start/vim-maktaba"]
 	path = vim/pack/plugins/start/vim-maktaba
 	url = https://github.com/google/vim-maktaba.git
+[submodule "vim/pack/github/start/copilot.vim"]
+	path = vim/pack/github/start/copilot.vim
+	url = https://github.com/github/copilot.vim.git
