@@ -59,6 +59,7 @@ Ex: `git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/sta
   - Spotify
   - 1Password
 - Preferences
-  - Lots of system preferences changes, commented in [`osx-preferences.sh`](osx-preferences.sh)
+  - Lots of system preferences changes, commented in [`osx/preferences.sh`](osx/preferences.sh)
+  - TouchID enabled for sudo commands
   - Change background
   - This is all reversible! Just run `osx-backup.sh` to restore your original preferences

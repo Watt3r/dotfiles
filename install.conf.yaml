@@ -15,7 +15,7 @@
         brew update
         brew tap homebrew/bundle
         brew bundle
-        ./osx-preferences.sh
+        ./osx/preferences.sh
       fi
     stdout: true
     stderr: true
