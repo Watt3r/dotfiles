@@ -42,6 +42,7 @@ sh -c "$(wget -O - https://lucas.tools/install)"
     - vim-prettier
     - vim-solidity
     - vim-test
+    - vim-copilot
   - vimrc
 
 To add vim plugins, use git submodules.
