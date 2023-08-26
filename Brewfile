@@ -23,6 +23,7 @@ tap "homebrew/cask"
 
 cask "spotify"
 cask "numi"
+cask "zoom"
 cask "1password-cli"
 cask "1password"
 
