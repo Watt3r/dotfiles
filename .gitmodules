@@ -56,3 +56,6 @@
 [submodule "vim/pack/github/start/copilot.vim"]
 	path = vim/pack/github/start/copilot.vim
 	url = https://github.com/github/copilot.vim.git
+[submodule "vim/pack/github/start/vim-kotlin"]
+	path = vim/pack/github/start/vim-kotlin
+	url = https://github.com/udalov/kotlin-vim.git
