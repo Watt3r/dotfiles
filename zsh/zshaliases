@@ -1,16 +1,13 @@
+alias python=python3
+alias pip=pip3
+
 alias proxy=~/scripts/proxy.sh
 alias noproxy=~/scripts/noproxy.sh
-alias koios=~/scripts/koios.sh
-alias erebos=~/scripts/erebos.sh
-alias wol="wakeonlan -i 192.168.1.255 -p 7 4C:CC:6A:93:1A:51"
-alias ecob="cd ~/Documents/ethprj/EcoBux/"
-alias eth="cd ~/Documents/ethprj/"
-alias t="cd ~/Documents/GitHub/trivio/"
-alias newmac="~/scripts/newmac.sh"
+
 alias ctags='/usr/local/bin/ctags'
-alias work="cat /dev/urandom | hexdump -C | grep 'ec 0b'"
-alias gorli=~/scripts/gorli.sh
-alias gas=gorli
+
+alias notif='terminal-notifier -ignoreDnD -title "Terminal"'
+
 # Don't correct test to tests
 alias yarn='nocorrect yarn' 
 

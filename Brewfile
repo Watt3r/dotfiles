@@ -15,6 +15,7 @@ brew "fzf"
 brew "kubectl"
 brew "go"
 brew "mypy"
+brew "terminal-notifier"
 
 cask "flutter"
 
@@ -35,8 +36,9 @@ cask "db-browser-for-sqlite"
 cask "docker"
 
 # System Helpers
-cask "dozer"
+cask "hiddenbar"
 cask "keepingyouawake"
+cask "openinterminal-lite"
 
 # Fonts
 tap "homebrew/cask-fonts"
