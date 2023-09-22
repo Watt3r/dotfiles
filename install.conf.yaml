@@ -53,7 +53,7 @@
     stdin: true
     stderr: true
     command: |
-      ./secrets/lpass.sh
+      /bin/bash -c "$(op inject -i ./secrets/1pass.sh)"
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/
@@ -73,11 +73,11 @@
     ~/.zprofile: zsh/zprofile
     ~/.zshaliases: zsh/zshaliases
     ~/.zshrc: 
-      path: zsh/zshrc
-      force: true
+        path: zsh/zshrc
+        force: true
     ~/.oh-my-zsh/custom/plugins/:
-      glob: true
-      path: zsh/oh-my-zsh/custom/plugins/*
+        glob: true
+        path: zsh/oh-my-zsh/custom/plugins/*
     ~/sounds: sounds
     ~/.eslintrc.json: lint/eslintrc.json
     ~/.solhint.json: lint/solhint.json
