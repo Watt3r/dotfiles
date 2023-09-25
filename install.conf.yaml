@@ -3,10 +3,15 @@
 
 - shell:
   -
+    description: sudo prompt
+    command: |
+      if [ -z "$GITHUB_ACTIONS" ]; then
+        sudo -v
+      fi
+  -
     description: brew install
     # Mac
     command: |
-      sudo -v
       if [ "$(uname -s)" = "Darwin" ]; then
         # Install brew if doesnt exist
         if ! command -v brew &> /dev/null; then
