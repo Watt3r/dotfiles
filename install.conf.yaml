@@ -3,10 +3,15 @@
 
 - shell:
   -
+    description: sudo prompt
+    command: |
+      if [ -z "$GITHUB_ACTIONS" ]; then
+        sudo -v
+      fi
+  -
     description: brew install
     # Mac
     command: |
-      sudo -v
       if [ "$(uname -s)" = "Darwin" ]; then
         # Install brew if doesnt exist
         if ! command -v brew &> /dev/null; then
@@ -24,7 +29,8 @@
     # Linux
     command: |
       if [ "$(uname -s)" = "Linux" ]; then
-        sudo apt-get install zsh ripgrep bat ctags nodejs
+        sudo apt-get update
+        sudo apt-get install -y zsh ripgrep bat universal-ctags nodejs
         # Set zsh as default shell
         chsh -s $(which zsh)
       fi
