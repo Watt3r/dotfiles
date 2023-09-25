@@ -20,7 +20,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Remove gitconfig
-        run: rm ~/.gitconfig
+        run: [ -f ~/.gitconfig ] && rm ~/.gitconfig
       - name: Install script
         run: sh -c "$(curl -fsSL https://lucas.tools/install)"
 
