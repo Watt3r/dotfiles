@@ -19,6 +19,8 @@ jobs:
             variant: darwin
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Remove gitconfig
+        run: rm ~/.gitconfig
       - name: Install script
         run: sh -c "$(curl -fsSL https://lucas.tools/install)"
 
