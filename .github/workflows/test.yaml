@@ -1,0 +1,27 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-13]
+        include:
+          - os: ubuntu-22.04
+            variant: linux
+          - os: macos-13
+            variant: darwin
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install script
+        run: sh -c "$(curl -fsSL https://lucas.tools/install)"
+
