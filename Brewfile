@@ -1,6 +1,6 @@
 # CLI Tools
 brew "bat"
-brew 'ctags'
+brew "universal-ctags"
 brew "ripgrep"
 brew "svn"
 brew "pyenv"
