@@ -54,8 +54,8 @@
 	path = vim/pack/plugins/start/vim-maktaba
 	url = https://github.com/google/vim-maktaba.git
 [submodule "vim/pack/github/start/copilot.vim"]
-	path = vim/pack/github/start/copilot.vim
+	path = vim/pack/plugins/start/copilot.vim
 	url = https://github.com/github/copilot.vim.git
 [submodule "vim/pack/github/start/vim-kotlin"]
-	path = vim/pack/github/start/vim-kotlin
+	path = vim/pack/plugins/start/vim-kotlin
 	url = https://github.com/udalov/kotlin-vim.git
