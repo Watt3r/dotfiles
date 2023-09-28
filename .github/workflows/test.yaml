@@ -24,6 +24,28 @@ jobs:
           if [ -f ~/.gitconfig ]; then
             rm ~/.gitconfig
           fi
+      - uses: actions/checkout@v4
+        sparse-checkout: "Brewfile"
+        if: runner.os == 'macOS'
+
+      - name: Cache brew dependencies
+        if: runner.os == 'macOS'
+        uses: actions/cache@v3
+        with:
+          path: |
+            /usr/local/Cellar
+            /usr/local/Homebrew
+            ~/Library/Caches/Homebrew
+          key: ${{ runner.os }}-brew-${{ hashFiles('**/Brewfile') }}
+          restore-keys: |
+            ${{ runner.os }}-brew-
+
+      - name: Install Homebrew packages
+        if: runner.os == 'macOS'
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+        run: |
+          brew bundle
+
       - name: Install script
         run: sh -c "$(curl -fsSL https://lucas.tools/install)"
 
