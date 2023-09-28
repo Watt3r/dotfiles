@@ -69,7 +69,33 @@
     stdin: true
     stderr: true
     command: |
-      /bin/bash -c "$(op inject -i ./secrets/1pass.sh)"
+      # Check if running in an interactive session
+      if [ -t 0 ]; then
+        echo "interactive"
+        # In interactive session, ask user for input
+        read -p "Do you want to use 1Password (yes/no)? " use_1pass
+      else
+        # In non-interactive session, don't try to login
+        echo "Non-interactive session detected. Cannot prompt for input."
+        use_1pass="no"
+      fi
+
+      use_1pass=$(echo $use_1pass | tr '[:upper:]' '[:lower:]')
+      if [ "$use_1pass" = "yes" ]; then
+        echo "Configuring 1Password account..."
+        op_status=$(op signin 2>&1)
+
+        if echo "$op_status" | grep -q "not currently signed in"; then
+          echo "You are not signed into 1Password, adding account..."
+          op account add
+        else
+          echo "Already signed in to 1Password."
+        fi
+  
+        /bin/bash -c "$(op inject -i ./secrets/1pass.sh)"
+      else
+        echo "Skipping 1Password configuration."
+      fi
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/
