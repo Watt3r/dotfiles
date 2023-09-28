@@ -43,18 +43,35 @@ sh -c "$(wget -O - https://lucas.tools/install)"
 ### :memo: Editor - Vim
 
 * **Plugins**:
-  - ❌ [ale](https://github.com/dense-analysis/ale): Asynchronous linting/fixing.
-  - 🔄 [surround](https://github.com/tpope/vim-surround): Parentheses, brackets, quotes, XML tags, and more.
-  - 🏷 [tagbar](https://github.com/preservim/tagbar): Display tags in a window.
-  - ✈️ [vim-airline](https://github.com/vim-airline/vim-airline): Lean & mean status/tabline.
-  - 🕵️ [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper.
-  - 📈 [vim-gitgutter](https://github.com/airblade/vim-gitgutter): Show a git diff in the sign column.
-  - 💅 [vim-prettier](https://github.com/prettier/vim-prettier): Prettier integration for Vim.
-  - 📜 [vim-solidity](https://github.com/TovarishFin/vim-solidity): Solidity syntax files for Vim.
-  - 🧪 [vim-test](https://github.com/vim-test/vim-test): A Vim wrapper for running tests.
-  - 🚀 [vim-copilot](https://github.com/github/copilot.vim): GitHub Copilot for Vim.
 
-* 📖 vimrc: My Vim configuration file.
+  * **Code Navigation & Search**:
+    - 🔎 [ctrlp](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+    - 🏷 [tagbar](https://github.com/preservim/tagbar): A class/module browser for navigating source code in an organized way.
+
+  * **Coding Assistance & Intelligence**:
+    - 🚀 [copilot.vim](https://github.com/github/copilot.vim): GitHub Copilot support for Vim.
+    - 🧪 [vim-test](https://github.com/vim-test/vim-test): A Vim wrapper for running tests on different granularities.
+    - 🔬 [vim-coverage](https://github.com/google/vim-coverage): Displays code coverage information for various languages.
+
+  * **Code Formatting & Alignment**:
+    - 💅 [vim-prettier](https://github.com/prettier/vim-prettier): A Vim plugin for Prettier, the opinionated code formatter.
+    - 🧐 [vim-easy-align](https://github.com/junegunn/vim-easy-align): A Vim alignment plugin to make text alignment easy.
+
+  * **Git Integration & Diff**:
+    - 🕵️ [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal.
+    - 📈 [vim-gitgutter](https://github.com/airblade/vim-gitgutter): A Vim plugin showing a git diff in the sign column.
+
+  * **Text Manipulation & Editing**:
+    - 🔄 [surround](https://github.com/tpope/vim-surround): Deal with pairs of surroundings effortlessly.
+
+  * **Language Support & Syntax Highlighting**:
+    - 📜 [vim-solidity](https://github.com/TovarishFin/vim-solidity): Solidity syntax and indent plugin for Vim.
+    - 🕊 [vim-flutter](https://github.com/thosakwe/vim-flutter): A Vim plugin for Flutter development.
+    - ☕ [vim-kotlin](https://github.com/udalov/kotlin-vim): Kotlin syntax and indent support for Vim.
+
+  * **Miscellaneous Utilities**:
+    - ✈️ [vim-airline](https://github.com/vim-airline/vim-airline): Lean & mean status/tabline for Vim that's light as air.
+    - ⚙️ [vim-maktaba](https://github.com/google/vim-maktaba): Vim framework for writing scripts and plugins in Vim script.
 
 <details>
 <summary><strong>Adding Vim Plugins</strong></summary>
@@ -90,7 +107,7 @@ git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/start/vi
 ---
 
 <div align="center">
-  <sub>Brought to you by [Lucas.Tools](https://lucas.tools).</sub>
+  <sub>Brought to you by <a href="https://lucas.tools">Lucas.Tools</a></sub>
 </div>
 
 ---
