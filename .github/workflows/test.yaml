@@ -19,14 +19,13 @@ jobs:
             variant: darwin
     runs-on: ${{ matrix.os }}
     steps:
+      - uses: actions/checkout@v4
+
       - name: Remove gitconfig
         run: |
           if [ -f ~/.gitconfig ]; then
             rm ~/.gitconfig
           fi
-      - uses: actions/checkout@v4
-        sparse-checkout: "Brewfile"
-        if: runner.os == 'macOS'
 
       - name: Cache brew dependencies
         id: cache-dependencies
@@ -47,5 +46,4 @@ jobs:
           brew bundle
 
       - name: Install script
-        run: sh -c "$(curl -fsSL https://lucas.tools/install)"
-
+        run: ./install
