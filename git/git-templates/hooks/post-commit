@@ -4,4 +4,4 @@ files=(~/sounds/*)
 sound=${files[RANDOM % ${#files[@]}+1]}
 echo ${sound}
 sleep 1
-afplay -v 1 ${sound} &
+afplay -v 1 "${sound}" &
