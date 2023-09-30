@@ -29,13 +29,18 @@
     # Linux
     command: |
       if [ "$(uname -s)" = "Linux" ]; then
-        # Add 1pass deb
-        curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
-        echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/1password-archive-keyring.gpg] https://downloads.1password.com/linux/debian/amd64 stable main' | sudo tee /etc/apt/sources.list.d/1password.list
-        sudo mkdir -p /etc/debsig/policies/AC2D62742012EA22/ curl -sS https://downloads.1password.com/linux/debian/debsig/1password.pol | sudo tee /etc/debsig/policies/AC2D62742012EA22/1password.pol sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22 curl -sS https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
+        sudo apt-get update 
+        sudo apt-get install -y zsh ripgrep bat universal-ctags nodejs unzip
 
-        sudo apt-get update
-        sudo apt-get install -y zsh ripgrep bat universal-ctags nodejs 1password 1password-cli
+        ARCH="$(dpkg --print-architecture)" && \
+        wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.20.0/op_linux_${ARCH}_v2.20.0.zip" -O op.zip && \
+        unzip -d op op.zip && \
+        sudo mv op/op /usr/local/bin && \
+        rm -r op.zip op && \
+        sudo groupadd -f onepassword-cli && \
+        sudo chgrp onepassword-cli /usr/local/bin/op && \
+        sudo chmod g+s /usr/local/bin/op
+
         # Set zsh as default shell
         sudo chsh -s $(which zsh) ${USER}
       fi
@@ -64,7 +69,33 @@
     stdin: true
     stderr: true
     command: |
-      /bin/bash -c "$(op inject -i ./secrets/1pass.sh)"
+      # Check if running in an interactive session
+      if [ -t 0 ]; then
+        echo "interactive"
+        # In interactive session, ask user for input
+        read -p "Do you want to use 1Password (yes/no)? " use_1pass
+      else
+        # In non-interactive session, don't try to login
+        echo "Non-interactive session detected. Cannot prompt for input."
+        use_1pass="no"
+      fi
+
+      use_1pass=$(echo $use_1pass | tr '[:upper:]' '[:lower:]')
+      if [ "$use_1pass" = "yes" ]; then
+        echo "Configuring 1Password account..."
+        op_status=$(op signin 2>&1)
+
+        if echo "$op_status" | grep -q "not currently signed in"; then
+          echo "You are not signed into 1Password, adding account..."
+          op account add
+        else
+          echo "Already signed in to 1Password."
+        fi
+  
+        /bin/bash -c "$(op inject -i ./secrets/1pass.sh)"
+      else
+        echo "Skipping 1Password configuration."
+      fi
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/
