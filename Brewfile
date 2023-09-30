@@ -30,7 +30,6 @@ cask "1password"
 
 # Coding Applications
 cask "iterm2"
-cask "github"
 cask "viscosity"
 cask "db-browser-for-sqlite"
 cask "docker"

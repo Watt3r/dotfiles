@@ -93,7 +93,6 @@ git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/start/vi
 
 * **Applications**:
   - 👓 [Dozer](https://github.com/Mortennn/Dozer): Hide menu bar items.
-  - 🖥 [Github Desktop](https://desktop.github.com): A fast and friendly Git GUI.
   - 🖥 [iTerm2](https://iterm2.com): macOS terminal replacement.
   - 🎵 [Spotify](https://www.spotify.com): Music streaming service.
   - 🔒 [1Password](https://1password.com): Password manager.

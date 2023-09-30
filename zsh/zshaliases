@@ -8,7 +8,11 @@ alias ctags='/usr/local/bin/ctags'
 
 alias notif='terminal-notifier -ignoreDnD -title "Terminal"'
 
-# Don't correct test to tests
-alias yarn='nocorrect yarn' 
+# Git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
 
 export TERM=xterm-256color
