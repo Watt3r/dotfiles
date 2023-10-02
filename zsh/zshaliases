@@ -6,7 +6,7 @@ alias noproxy=~/scripts/noproxy.sh
 
 alias ctags='/usr/local/bin/ctags'
 
-alias notif='terminal-notifier -ignoreDnD -title "Terminal"'
+alias notif='tee /dev/tty | terminal-notifier -ignoreDnD -title "Terminal"'
 
 # Git aliases
 alias g='git'
