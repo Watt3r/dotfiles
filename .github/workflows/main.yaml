@@ -1,0 +1,26 @@
+name: run from lucas.tools install script
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, macos-13]
+        include:
+          - os: ubuntu-22.04
+            variant: linux
+          - os: macos-13
+            variant: darwin
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Remove gitconfig
+        run: |
+          if [ -f ~/.gitconfig ]; then
+            rm ~/.gitconfig
+          fi
+      - name: Install script
+        run: sh -c "$(curl -fsSL https://lucas.tools/install)"
