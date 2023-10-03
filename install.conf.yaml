@@ -30,8 +30,9 @@
     command: |
       if [ "$(uname -s)" = "Linux" ]; then
         sudo apt-get update 
-        sudo apt-get install -y zsh ripgrep bat universal-ctags nodejs unzip
+        sudo apt-get install -y zsh ripgrep bat universal-ctags unzip
 
+        # Install 1password
         ARCH="$(dpkg --print-architecture)" && \
         wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.20.0/op_linux_${ARCH}_v2.20.0.zip" -O op.zip && \
         unzip -d op op.zip && \
@@ -40,6 +41,15 @@
         sudo groupadd -f onepassword-cli && \
         sudo chgrp onepassword-cli /usr/local/bin/op && \
         sudo chmod g+s /usr/local/bin/op
+
+        # Install node v20
+        sudo mkdir -p /etc/apt/keyrings
+        curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+        NODE_MAJOR=20
+        echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+        sudo apt-get update
+        sudo apt-get install -y nodejs
 
         # Set zsh as default shell
         sudo chsh -s $(which zsh) ${USER}
@@ -55,12 +65,6 @@
         echo 'Installing oh-my-zsh'
         /bin/sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
       fi
-    stdout: true
-    stderr: true
-  -
-    description: npm install
-    command: |
-      npm install -g nodemon eslint solhint solhint-plugin-prettier prettier-plugin-solidity
     stdout: true
     stderr: true
   -
@@ -99,6 +103,7 @@
 
 - create:
   - ~/.oh-my-zsh/custom/plugins/
+  - ~/.npm-global
 
 - link:
     ~/.gitconfig: git/gitconfig
@@ -123,3 +128,12 @@
     ~/sounds: sounds
     ~/.eslintrc.json: lint/eslintrc.json
     ~/.solhint.json: lint/solhint.json
+
+- shell:
+  -
+    description: npm config and install
+    command: |
+      npm config set prefix '~/.npm-global'
+      npm install -g nodemon eslint solhint solhint-plugin-prettier prettier-plugin-solidity
+    stdout: true
+    stderr: true
