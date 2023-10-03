@@ -11,9 +11,11 @@ ZSH_THEME="agnoster"
 alias cat="bat"
 alias bat="bat --theme=gruvbox-dark"
 
-
 # Set custom aliases
 source ~/.zshaliases
+
+# Load 1password plugins
+source "$HOME/.config/op/plugins.sh"
 
 # Load NVM
 # Slows down startup, node works just fine without it normally
