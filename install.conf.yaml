@@ -33,23 +33,26 @@
         sudo apt-get install -y zsh ripgrep bat universal-ctags unzip
 
         # Install 1password
-        ARCH="$(dpkg --print-architecture)" && \
-        wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.20.0/op_linux_${ARCH}_v2.20.0.zip" -O op.zip && \
-        unzip -d op op.zip && \
-        sudo mv op/op /usr/local/bin && \
-        rm -r op.zip op && \
-        sudo groupadd -f onepassword-cli && \
-        sudo chgrp onepassword-cli /usr/local/bin/op && \
-        sudo chmod g+s /usr/local/bin/op
+        if ! command -v op &> /dev/null; then
+          ARCH="$(dpkg --print-architecture)" && \
+          wget "https://cache.agilebits.com/dist/1P/op2/pkg/v2.20.0/op_linux_${ARCH}_v2.20.0.zip" -O op.zip && \
+          unzip -d op op.zip && \
+          sudo mv op/op /usr/local/bin && \
+          rm -r op.zip op && \
+          sudo groupadd -f onepassword-cli && \
+          sudo chgrp onepassword-cli /usr/local/bin/op && \
+          sudo chmod g+s /usr/local/bin/op
+        fi
 
         # Install node v20
-        sudo mkdir -p /etc/apt/keyrings
-        curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
         NODE_MAJOR=20
-        echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-
-        sudo apt-get update
-        sudo apt-get install -y nodejs
+        if ! command -v node &>/dev/null || [ "$NODE_MAJOR" -ne "$(node --version | cut -d'v' -f2 | cut -d'.' -f1)" ]; then
+          sudo mkdir -p /etc/apt/keyrings
+          curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+          echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+          sudo apt-get update
+          sudo apt-get install -y nodejs
+        fi
 
         # Set zsh as default shell
         sudo chsh -s $(which zsh) ${USER}
