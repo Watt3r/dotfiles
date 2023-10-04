@@ -15,7 +15,6 @@ CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 usage() {
 	this="$1"
@@ -89,11 +88,11 @@ parse_args() {
 }
 
 dotbot() {
-  cd "${BASEDIR}"
+  cd "${INSTALL_DIR}"
   git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
   git submodule update --init --recursive "${DOTBOT_DIR}"
 
-  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+  "${INSTALL_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${INSTALL_DIR}" -c "${CONFIG}" "${@}"
 }
 
 main() {
