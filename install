@@ -1,6 +1,15 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+# Lucas Oberwager dotfiles install script
+# contains code from and inspired by
+# https://github.com/twpayne/chezmoi
 
 set -e
+
+FORCE=0
+LOG_LEVEL=2
+GITHUB_DOWNLOAD=https://github.com/Watt3r/dotfiles.git
+INSTALL_DIR=~/.dotfiles
 
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
@@ -8,8 +17,124 @@ DOTBOT_DIR="dotbot"
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+usage() {
+	this="$1"
+	cat <<EOF
+${this}: Download Lucas Oberwager's dotfiles
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+Usage: ${this} [-i installdir] [-l] [-h] [-f]
+  -i  Set the installation directory (default is ${INSTALL_DIR}).
+  -l  Set the log level (default is ${LOG_LEVEL}).
+  -f  Force install, ignore if repo is already up to date
+  -h  Show this help message.
+EOF
+	exit 2
+}
+
+check_command() {
+    command -v "$1" > /dev/null 2>&1 || { echo >&2 "$1 is required but it's not installed. Aborting."; exit 1; }
+}
+
+get_remote_url() {
+    git -C "$1" config --get remote.origin.url
+}
+
+check_repo() {
+  remote_url=$(get_remote_url "$1")
+  if [ "$remote_url" == "$GITHUB_DOWNLOAD" ]; then
+      return 0
+  else
+      return 1
+  fi
+}
+
+install_xcode_cli() {
+    if [ "$(uname)" = "Darwin" ]; then
+        if ! xcode-select --print-path &>/dev/null; then
+            echo "Xcode CLI tools not found. Installing them..."
+            xcode-select --install
+            echo "Please continue with the script after the installation is complete."
+            exit 1
+        fi
+    fi
+}
+
+log_info() {
+	[ 2 -le "${LOG_LEVEL}" ] || return 0
+	echo info "$@" 1>&2
+}
+
+log_crit() {
+	[ 0 -le "${LOG_LEVEL}" ] || return 0
+	echo critical "$@" 1>&2
+}
+
+parse_args() {
+	while getopts "i:l:fh" arg; do
+		case "${arg}" in
+		i) INSTALL_DIR="${OPTARG}" ;;
+                l)
+                   case ${OPTARG} in
+                     ''|*[!0-9]*) echo "Error: -l requires an integer argument" ; exit 1 ;;
+                     *) LOG_LEVEL=${OPTARG} ;;
+                   esac
+                   ;;
+                f) FORCE=1 ;;
+		h | \?) usage "$0" ;;
+		*) return 1 ;;
+		esac
+	done
+	shift $((OPTIND - 1))
+	EXECARGS="$*"
+}
+
+dotbot() {
+  cd "${BASEDIR}"
+  git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+  git submodule update --init --recursive "${DOTBOT_DIR}"
+
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+}
+
+main() {
+  parse_args "$@"
+  install_xcode_cli
+  check_command git
+
+  if [ "$(whoami)" = "root" ]; then
+    log_crit "Do not run as root. Install dotfiles for a specific user."
+    exit 1
+  fi
+
+  if ! mkdir "${INSTALL_DIR}" &>/dev/null; then
+    log_info "Directory ${INSTALL_DIR} exists. Checking if proper dotfiles repo."
+    if ! check_repo "${INSTALL_DIR}" ; then
+      log_crit "Directory ${INSTALL_DIR} exists and is not a proper dotfiles repo. Moving."
+      mv -n "${INSTALL_DIR}" "${INSTALL_DIR}-backup"
+      log_info "Cloning dotfiles repo from ${GITHUB_DOWNLOAD}"
+      git clone --recurse-submodules ${GITHUB_DOWNLOAD} ${INSTALL_DIR}
+      # TODO: can return here
+    fi
+
+    git -C "${INSTALL_DIR}" fetch --quiet
+
+    LOCAL_COMMIT=$(git -C "${INSTALL_DIR}" rev-parse HEAD)
+    REMOTE_COMMIT=$(git -C "${INSTALL_DIR}" rev-parse @{u})  # @{u} shorthand for the upstream branch
+
+    if [ "$LOCAL_COMMIT" = "$REMOTE_COMMIT" ] && [ "$FORCE" -eq 0 ]; then
+      log_info "Proper dotfiles repo exists and up-to-date. Goodbye."
+      exit 0
+    else
+      log_info "Pulling remote changes"
+      git -C "${INSTALL_DIR}" pull
+    fi
+  else
+    log_info "Cloning dotfiles repo from ${GITHUB_DOWNLOAD}"
+    git clone --recurse-submodules ${GITHUB_DOWNLOAD} ${INSTALL_DIR}
+  fi
+
+  dotbot || (log_crit "Installation failed" && exit 1)
+  log_info "Successfully installed."
+}
+
+main "$@"
