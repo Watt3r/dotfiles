@@ -78,8 +78,15 @@ parse_args() {
 }
 
 install_dotfiles() {
-  if ! mkdir "${INSTALL_DIR}" &>/dev/null && ! valid_repo "${INSTALL_DIR}"; then
-    [ -d "${INSTALL_DIR}" ] && mv -n "${INSTALL_DIR}" "${INSTALL_DIR}-backup" && log_crit "Directory ${INSTALL_DIR} is moved for backup."
+  if [ ! -d "${INSTALL_DIR}" ]; then
+    log_info "Cloning dotfiles repo from ${GITHUB_DOWNLOAD}"
+    git clone --recurse-submodules ${GITHUB_DOWNLOAD} ${INSTALL_DIR}
+    return 1
+  fi
+
+  if ! valid_repo "${INSTALL_DIR}"; then
+    log_crit "Directory ${INSTALL_DIR} is not a valid repo, moving it for backup."
+    mv -n "${INSTALL_DIR}" "${INSTALL_DIR}-backup"
     log_info "Cloning dotfiles repo from ${GITHUB_DOWNLOAD}"
     git clone --recurse-submodules ${GITHUB_DOWNLOAD} ${INSTALL_DIR}
     return 1
@@ -89,7 +96,12 @@ install_dotfiles() {
   LOCAL_COMMIT=$(git -C "${INSTALL_DIR}" rev-parse HEAD)
   REMOTE_COMMIT=$(git -C "${INSTALL_DIR}" rev-parse @{u})
 
-  [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ] || [ "$FORCE" -ne 0 ] && log_info "Pulling remote changes" && git -C "${INSTALL_DIR}" pull && return 1
+  if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ] || [ "$FORCE" -ne 0 ]; then
+    log_info "Pulling remote changes"
+    git -C "${INSTALL_DIR}" pull
+    return 1
+  fi
+
   return 0
 }
 
