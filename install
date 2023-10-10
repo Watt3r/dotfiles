@@ -77,7 +77,7 @@ parse_args() {
 	esac; done
 }
 
-install_dotfiles() {
+download_dotfiles() {
   if [ ! -d "${INSTALL_DIR}" ]; then
     log_info "Cloning dotfiles repo from ${GITHUB_DOWNLOAD}"
     git clone --recurse-submodules ${GITHUB_DOWNLOAD} ${INSTALL_DIR}
@@ -123,7 +123,7 @@ main() {
     exit 1
   fi
 
-  if install_dotfiles ; then
+  if download_dotfiles ; then
       log_info "Proper dotfiles repo exists and up-to-date. Goodbye."
       exit 0
   fi
