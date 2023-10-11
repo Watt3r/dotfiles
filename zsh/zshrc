@@ -6,6 +6,8 @@ export PATH=$PATH:$(go env GOPATH)/bin:~/.npm-global/bin
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
+# Stop agnoster from showing default hostname
+DEFAULT_USER=lucasoberwager
 
 # Set bat theme
 alias cat="bat"
@@ -68,8 +70,6 @@ plugins=(git z zsh-syntax-highlighting yarn-autocompletions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Stop agnoster from showing default hostname
-prompt_context(){}
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
