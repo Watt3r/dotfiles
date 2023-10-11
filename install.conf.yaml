@@ -21,6 +21,8 @@
         brew tap homebrew/bundle
         brew bundle --file osx/Brewfile
         ./osx/preferences.sh
+
+        echo "mas signin no longer works. To install all mas first login to the app store then run `brew bundle osx/MasBrewfile`"
       fi
     stdout: true
     stderr: true

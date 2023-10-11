@@ -55,9 +55,3 @@ cask "openinterminal-lite"
 
 # Fonts
 cask "font-hack"
-
-# Mac App Store Applications
-mas "1Password for Safari", id: 1569813296
-mas "Goodnotes", id: 1444383602
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft Word", id: 462054704
