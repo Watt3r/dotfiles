@@ -19,7 +19,7 @@
         fi
         brew update
         brew tap homebrew/bundle
-        brew bundle
+        brew bundle --file osx/Brewfile
         ./osx/preferences.sh
       fi
     stdout: true

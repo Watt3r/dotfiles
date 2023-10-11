@@ -1,0 +1,63 @@
+# Tap Sources
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+# CLI Tools
+brew "act"
+brew "bat"
+brew "curl"
+brew "doctl"
+brew "ffmpeg"
+brew "fzf"
+brew "git-lfs"
+brew "go"
+brew "kotlin"
+brew "ktlint"
+brew "kubernetes-cli"
+brew "mas"
+brew "md5sha1sum"
+brew "mosh"
+brew "mypy"
+brew "node"
+brew "prettier"
+brew "pyenv"
+brew "python@3.11"
+brew "redis"
+brew "ripgrep"
+brew "terminal-notifier"
+brew "tree"
+brew "universal-ctags"
+brew "vim"
+brew "yarn"
+brew "zsh-syntax-highlighting"
+
+# General Applications
+cask "1password"
+cask "1password-cli"
+cask "numi"
+cask "slack"
+cask "spotify"
+cask "zoom"
+
+# Coding Applications
+cask "db-browser-for-sqlite"
+cask "docker"
+cask "flutter"
+cask "github"
+cask "iterm2"
+cask "multipass"
+
+# System Helpers
+cask "hiddenbar"
+cask "keepingyouawake"
+cask "openinterminal-lite"
+
+# Fonts
+cask "font-hack"
+
+# Mac App Store Applications
+mas "1Password for Safari", id: 1569813296
+mas "Goodnotes", id: 1444383602
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft Word", id: 462054704
