@@ -1,8 +1,6 @@
-name: test
+name: install from branch
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
