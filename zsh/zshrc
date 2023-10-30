@@ -70,6 +70,10 @@ plugins=(git z zsh-syntax-highlighting yarn-autocompletions)
 
 source $ZSH/oh-my-zsh.sh
 
+# Pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# Kubectl completion
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
