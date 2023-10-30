@@ -103,6 +103,26 @@ git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/start/vi
   - 🌄 Non distracting gray background
   - ⚠️ **Everything's reversible!** Run `osx-backup.sh` to restore your original settings.
 
+## :arrows_counterclockwise: Updating
+
+Keep your configurations fresh and up-to-date!
+
+- :white_check_mark: **Easy Update**: Run the install script again, and it'll automatically check for the latest configurations.
+
+  ```bash
+  sh -c "$(curl -fsSL https://lucas.tools/install)"
+  ```
+
+- :stop_sign: **No Redundancy**: By default, if there are no new git commits, nothing is changed.
+
+- :zap: **Force Update**: Want to ensure the latest and greatest? Use the `-f` flag to force the installation.
+
+  ```bash
+  sh -c "$(curl -fsSL https://lucas.tools/install)" -- -f
+  ```
+
+- :memo: ***Note***: Feel free to run the install script, with or without the `-f` flag, as many times as you like! Your system will always stay in sync with the latest git commits.
+
 ---
 
 <div align="center">
