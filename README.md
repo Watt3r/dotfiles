@@ -8,6 +8,8 @@ Your go-to configuration for the best developer experience.
 
 ---
 
+![Dotfiles terminal example](./pics/example.png)
+
 ## :rocket: Quick Install
 
 **MacOS**:
