@@ -58,6 +58,7 @@ sh -c "$(wget -O - https://lucas.tools/install)"
   * **Code Formatting & Alignment**:
     - 💅 [vim-prettier](https://github.com/prettier/vim-prettier): A Vim plugin for Prettier, the opinionated code formatter.
     - 🧐 [vim-easy-align](https://github.com/junegunn/vim-easy-align): A Vim alignment plugin to make text alignment easy.
+    - 🌑 [vim-carbon-now](https://github.com/kristijanhusak/vim-carbon-now-sh): A Vim plugin for opening the current buffer in carbon.now.sh for beautiful code screenshots.
 
   * **Git Integration & Diff**:
     - 🕵️ [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal.
