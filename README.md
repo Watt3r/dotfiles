@@ -2,7 +2,8 @@
 
 # Dotfiles
 
-Your go-to configuration for the best developer experience.
+The lucas.tools developer experience. 
+Includes everything you need to go from fresh install to coding in no time.
 
 </div>
 
