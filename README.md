@@ -72,6 +72,7 @@ sh -c "$(wget -O - https://lucas.tools/install)"
     - 📜 [vim-solidity](https://github.com/TovarishFin/vim-solidity): Solidity syntax and indent plugin for Vim.
     - 🕊 [vim-flutter](https://github.com/thosakwe/vim-flutter): A Vim plugin for Flutter development.
     - ☕ [vim-kotlin](https://github.com/udalov/kotlin-vim): Kotlin syntax and indent support for Vim.
+    - 🪐 [juypter-vim](https://github.com/jupyter-vim/jupyter-vim.git): Juypter notebooks for Vim.
 
   * **Miscellaneous Utilities**:
     - ✈️ [vim-airline](https://github.com/vim-airline/vim-airline): Lean & mean status/tabline for Vim that's light as air.
