@@ -50,6 +50,7 @@ sh -c "$(wget -O - https://lucas.tools/install)"
   * **Code Navigation & Search**:
     - 🔎 [ctrlp](https://github.com/ctrlpvim/ctrlp.vim): Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
     - 🏷 [tagbar](https://github.com/preservim/tagbar): A class/module browser for navigating source code in an organized way.
+    - 🍇 [vim-vinegar](https://github.com/tpope/vim-vinegar): Enhance Vim's built-in directory browser.
 
   * **Coding Assistance & Intelligence**:
     - 🚀 [copilot.vim](https://github.com/github/copilot.vim): GitHub Copilot support for Vim.
@@ -65,6 +66,9 @@ sh -c "$(wget -O - https://lucas.tools/install)"
     - 🕵️ [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal.
     - 📈 [vim-gitgutter](https://github.com/airblade/vim-gitgutter): A Vim plugin showing a git diff in the sign column.
 
+  * **Linting & Syntax Checking**:
+    - 🛠️ [ALE](https://github.com/dense-analysis/ale): Asynchronous linting/fixing for Vim.
+
   * **Text Manipulation & Editing**:
     - 🔄 [surround](https://github.com/tpope/vim-surround): Deal with pairs of surroundings effortlessly.
 
@@ -72,7 +76,8 @@ sh -c "$(wget -O - https://lucas.tools/install)"
     - 📜 [vim-solidity](https://github.com/TovarishFin/vim-solidity): Solidity syntax and indent plugin for Vim.
     - 🕊 [vim-flutter](https://github.com/thosakwe/vim-flutter): A Vim plugin for Flutter development.
     - ☕ [vim-kotlin](https://github.com/udalov/kotlin-vim): Kotlin syntax and indent support for Vim.
-    - 🪐 [juypter-vim](https://github.com/jupyter-vim/jupyter-vim.git): Juypter notebooks for Vim.
+    - 🪐 [vim-jupyter](https://github.com/jupyter-vim/jupyter-vim.git): Juypter notebooks for Vim.
+    - 🐹 [vim-go](https://github.com/fatih/vim-go): Go development plugin for Vim.
 
   * **Miscellaneous Utilities**:
     - ✈️ [vim-airline](https://github.com/vim-airline/vim-airline): Lean & mean status/tabline for Vim that's light as air.

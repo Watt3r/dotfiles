@@ -43,6 +43,11 @@ nmap <leader>e :lnext<CR>
 nmap gr :GoReferrers<CR>
 vnoremap <leader>u "0y:%s/<C-r>0/<C-R>=substitute(system('uuidgen'), '\n$','', '')<CR>/g<CR>
 vnoremap <leader>c :CarbonNowSh<CR>
+
+nnoremap <leader>dd :Lexplore %:p:h<CR>
+nnoremap <Leader>da :Lexplore<CR>
+
+
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -102,6 +107,11 @@ nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
+
+let g:netrw_banner = 0
+let g:netrw_winsize = 40
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
 
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
