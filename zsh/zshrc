@@ -75,5 +75,37 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+ORIGINAL_PS1=$PS1
+
+# Function to modify the prompt when a venv is activated
+prompt_virtualenv() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+      local venv_glyph="(λ)"
+      local divider=""
+      export PS1="%{$fg[black]%}%{$bg[magenta]%}$venv_glyph%{$fg[magenta]%}%{$bg[blue]%}$divider%{$reset_color%}$ORIGINAL_PS1"
+  fi
+}
+
+# Function to manage the activation and deactivation of the venv
+python_venv() {
+  MYVENV=./venv
+  if [[ -d $MYVENV ]]; then
+    source $MYVENV/bin/activate > /dev/null 2>&1
+    prompt_virtualenv
+  else
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+      deactivate > /dev/null 2>&1
+      export PS1=$ORIGINAL_PS1
+    fi
+  fi
+}
+
+autoload -U add-zsh-hook
+add-zsh-hook chpwd python_venv
+
+python_venv
+
+
 # Kubectl completion
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
