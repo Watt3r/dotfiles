@@ -15,12 +15,12 @@ Includes everything you need to go from fresh install to coding in no time.
 
 **MacOS**:
 ```bash
-sh -c "$(curl -fsSL https://lucas.tools/install)"
+sh -c "$(curl -fsSL lucas.tools/install)"
 ```
 
 **Linux**:
 ```bash
-sh -c "$(wget -O - https://lucas.tools/install)"
+sh -c "$(wget -O - lucas.tools/install)"
 ```
 
 ## :wrench: Features
