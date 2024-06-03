@@ -14,5 +14,6 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
+alias gpb='git pb'
 
 export TERM=xterm-256color
