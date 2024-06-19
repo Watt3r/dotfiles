@@ -40,7 +40,6 @@ autocmd BufEnter * :syntax sync fromstart
 
 filetype plugin indent on
 
-nmap <leader>D <plug>(YCMHover)
 nmap <F9> :TagbarToggle<CR>
 nmap <leader>e :lnext<CR>
 nmap gr :GoReferrers<CR>
@@ -92,7 +91,6 @@ inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 
 
-let g:ycm_auto_hover=''
 let g:airline_powerline_fonts = 1
 
 au FileType markdown vmap <leader><Bar> :EasyAlign*<Bar><Enter>
@@ -124,6 +122,10 @@ let g:ale_lint_on_insert_leave = 0
 " don't have linters run on opening a file
 let g:ale_lint_on_enter = 0
 let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_linters = {
+    \ 'python': ['pyright', 'mypy', 'flake8', 'black', 'isort'],
+\ }
+nmap gd <Plug>(ale_go_to_definition)
 
 
 let g:tagbar_autoclose = 0 

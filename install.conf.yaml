@@ -32,7 +32,7 @@
     command: |
       if [ "$(uname -s)" = "Linux" ]; then
         sudo apt-get update 
-        sudo apt-get install -y zsh ripgrep bat universal-ctags unzip
+        sudo apt-get install -y zsh build-essential ripgrep bat universal-ctags unzip
 
         # Install 1password
         if ! command -v op &> /dev/null; then
@@ -145,6 +145,6 @@
     description: npm config and install
     command: |
       npm config set prefix '~/.npm-global'
-      npm install -g nodemon eslint solhint solhint-plugin-prettier prettier-plugin-solidity
+      npm install -g nodemon eslint pyright
     stdout: true
     stderr: true

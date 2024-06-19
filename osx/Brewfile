@@ -7,12 +7,11 @@ brew "act"
 brew "bat"
 brew "curl"
 brew "doctl"
+brew "exiftool"
 brew "ffmpeg"
 brew "fzf"
 brew "git-lfs"
 brew "go"
-brew "kotlin"
-brew "ktlint"
 brew "kubernetes-cli"
 brew "mas"
 brew "md5sha1sum"
@@ -38,6 +37,9 @@ cask "numi"
 cask "slack"
 cask "spotify"
 cask "zoom"
+
+# Peripheral Applications
+cask "uhk-agent"
 
 # Coding Applications
 cask "db-browser-for-sqlite"

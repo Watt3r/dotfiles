@@ -65,9 +65,6 @@
 [submodule "vim/pack/plugins/start/vim-carbon-now"]
 	path = vim/pack/plugins/start/vim-carbon-now
 	url = https://github.com/kristijanhusak/vim-carbon-now-sh.git
-[submodule "vim/pack/plugins/start/vim-jupyter"]
-	path = vim/pack/plugins/start/vim-jupyter
-	url = https://github.com/jupyter-vim/jupyter-vim.git
 [submodule "vim/pack/plugins/start/vim-vinegar"]
 	path = vim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
