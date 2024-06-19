@@ -26,6 +26,9 @@ set history=500
 set wildmode=longest,list,full
 set wildmenu
 set number
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
 
 augroup numbertoggle
   autocmd!

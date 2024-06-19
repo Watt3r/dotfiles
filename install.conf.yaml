@@ -127,7 +127,7 @@
         path: vim/pack
         create: true
     ~/.vimrc: vim/vimrc
-    ~/.screenrc: screen/screenrc
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.zprofile: zsh/zprofile
     ~/.zshaliases: zsh/zshaliases
     ~/.zshrc: 
