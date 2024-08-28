@@ -68,3 +68,15 @@
 [submodule "vim/pack/plugins/start/vim-vinegar"]
 	path = vim/pack/plugins/start/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/pack/plugins/start/vim-tmux-navigator"]
+	path = vim/pack/plugins/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator.git
+[submodule "vim/pack/plugins/start/vim-jsonl"]
+	path = vim/pack/plugins/start/vim-jsonl
+	url = https://github.com/kyoh86/vim-jsonl.git
+[submodule "vim/pack/plugins/start/vim-gh-line"]
+	path = vim/pack/plugins/start/vim-gh-line
+	url = https://github.com/ruanyl/vim-gh-line.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

@@ -75,7 +75,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Disable the default virtual environment prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Save the original prompt
 ORIGINAL_PS1=$PS1
 
 # Function to modify the prompt when a venv is activated
@@ -84,6 +87,8 @@ prompt_virtualenv() {
       local venv_glyph="(λ)"
       local divider=""
       export PS1="%{$fg[black]%}%{$bg[magenta]%}$venv_glyph%{$fg[magenta]%}%{$bg[blue]%}$divider%{$reset_color%}$ORIGINAL_PS1"
+  else
+      export PS1=$ORIGINAL_PS1
   fi
 }
 
@@ -96,10 +101,24 @@ python_venv() {
   else
     if [[ -n "$VIRTUAL_ENV" ]]; then
       deactivate > /dev/null 2>&1
-      export PS1=$ORIGINAL_PS1
+      prompt_virtualenv
     fi
   fi
 }
+
+# Hook to update the prompt when changing directories
+chpwd() {
+  prompt_virtualenv
+}
+
+# Hook to update the prompt when executing commands
+precmd() {
+  prompt_virtualenv
+}
+
+# Initialize the prompt
+prompt_virtualenv
+
 
 autoload -U add-zsh-hook
 add-zsh-hook chpwd python_venv

@@ -29,6 +29,7 @@ set number
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
+set completeopt+=preview
 
 augroup numbertoggle
   autocmd!
@@ -40,6 +41,7 @@ autocmd BufEnter * :syntax sync fromstart
 
 filetype plugin indent on
 
+set pastetoggle=<F3>
 nmap <F9> :TagbarToggle<CR>
 nmap <leader>e :lnext<CR>
 nmap gr :GoReferrers<CR>
@@ -106,7 +108,11 @@ nmap <silent> <leader>t :TestNearest<CR>
 nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
-nmap <silent> <leader>g :TestVisit<CR>
+" nmap <silent> <leader>g :TestVisit<CR>
+
+let g:gh_line_map = '<leader>b'
+
+let g:markdown_fenced_languages = ['html', 'js=javascript', 'python']
 
 
 let g:netrw_banner = 0
@@ -123,7 +129,10 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_on_enter = 0
 let g:ale_virtualtext_cursor = 'disabled'
 let g:ale_linters = {
-    \ 'python': ['pyright', 'mypy', 'flake8', 'black', 'isort'],
+    \ 'python': ['ruff', 'pyright', 'mypy', 'flake8', 'black', 'isort'],
+\ }
+let g:ale_fixers = {
+    \ 'python': ['ruff', 'black', 'isort'],
 \ }
 nmap gd <Plug>(ale_go_to_definition)
 

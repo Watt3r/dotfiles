@@ -65,6 +65,7 @@ sh -c "$(wget -O - lucas.tools/install)"
   * **Git Integration & Diff**:
     - 🕵️ [vim-fugitive](https://github.com/tpope/vim-fugitive): A Git wrapper so awesome, it should be illegal.
     - 📈 [vim-gitgutter](https://github.com/airblade/vim-gitgutter): A Vim plugin showing a git diff in the sign column.
+    - 📝 [vim-gh-line](https://github.com/ruanyl/vim-gh-line): Open GitHub URL for the current file/selection/line.
 
   * **Linting & Syntax Checking**:
     - 🛠️ [ALE](https://github.com/dense-analysis/ale): Asynchronous linting/fixing for Vim.
@@ -78,10 +79,12 @@ sh -c "$(wget -O - lucas.tools/install)"
     - ☕ [vim-kotlin](https://github.com/udalov/kotlin-vim): Kotlin syntax and indent support for Vim.
     - 🪐 [vim-jupyter](https://github.com/jupyter-vim/jupyter-vim.git): Juypter notebooks for Vim.
     - 🐹 [vim-go](https://github.com/fatih/vim-go): Go development plugin for Vim.
+    - 🗃️ [vim-jsonl](https://github.com/kyoh86/vim-jsonl): JSONL syntax highlighting for Vim.
 
   * **Miscellaneous Utilities**:
     - ✈️ [vim-airline](https://github.com/vim-airline/vim-airline): Lean & mean status/tabline for Vim that's light as air.
     - ⚙️ [vim-maktaba](https://github.com/google/vim-maktaba): Vim framework for writing scripts and plugins in Vim script.
+    - 🔀 [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits.
 
 <details>
 <summary><strong>Adding Vim Plugins</strong></summary>
