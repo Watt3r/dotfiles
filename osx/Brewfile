@@ -1,6 +1,7 @@
 # Tap Sources
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
+tap "siderolabs/tap"
 
 # CLI Tools
 brew "act"
@@ -23,6 +24,7 @@ brew "pyenv"
 brew "python@3.11"
 brew "redis"
 brew "ripgrep"
+brew "talosctl"
 brew "terminal-notifier"
 brew "tree"
 brew "universal-ctags"
@@ -48,11 +50,13 @@ cask "flutter"
 cask "github"
 cask "iterm2"
 cask "multipass"
+cask "balenaetcher"
 
 # System Helpers
 cask "hiddenbar"
 cask "keepingyouawake"
 cask "openinterminal-lite"
+cask "tunnelblick"
 
 # Fonts
 cask "font-hack"
