@@ -2,9 +2,6 @@
 
 # Dotfiles
 
-The lucas.tools developer experience. 
-Includes everything you need to go from fresh install to coding in no time.
-
 </div>
 
 ---
@@ -113,7 +110,7 @@ git submodule add https://github.com/vim-test/vim-test vim/pack/plugins/start/vi
 * **Preferences**:
   - Dive into abundant system preferences changes in [`osx/preferences.sh`](osx/preferences.sh).
   - 🖐 Use `TouchID` for sudo commands.
-  - 🌄 Non distracting gray background
+  - 🌄 Gray background
   - ⚠️ **Everything's reversible!** Run `osx-backup.sh` to restore your original settings.
 
 ## :arrows_counterclockwise: Updating
@@ -134,12 +131,10 @@ Keep your configurations fresh and up-to-date!
   sh -c "$(curl -fsSL https://lucas.tools/install)" -- -f
   ```
 
-- :memo: ***Note***: Feel free to run the install script, with or without the `-f` flag, as many times as you like! Your system will always stay in sync with the latest git commits.
-
 ---
 
 <div align="center">
-  <sub>Brought to you by <a href="https://lucas.tools">Lucas.Tools</a></sub>
+  <sub><a href="https://lucas.tools">Lucas.Tools</a></sub>
 </div>
 
 ---
