@@ -48,7 +48,7 @@ cask "db-browser-for-sqlite"
 cask "docker"
 cask "flutter"
 cask "github"
-cask "iterm2"
+cask "ghostty"
 cask "multipass"
 cask "balenaetcher"
 

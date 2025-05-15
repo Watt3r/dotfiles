@@ -142,6 +142,9 @@
     ~/sounds: sounds
     ~/.eslintrc.json: lint/eslintrc.json
     ~/.solhint.json: lint/solhint.json
+    ~/.config/ghostty/config:
+        path: ghostty/config
+        create: true
 
 - shell:
   -
