@@ -39,6 +39,7 @@ sh -c "$(wget -O - lucas.tools/install)"
   - ✨ [prettier](https://prettier.io): Opinionated code formatter.
   - 🔍 [ripgrep](https://github.com/BurntSushi/ripgrep): A line-oriented search tool.
   - 🔒 [1password-cli](https://support.1password.com/command-line/): Command-line tool for 1Password.
+  - 🔳 [rectangle](https://rectangleapp.com): Window management for macOS.
 
 ### :memo: Editor - Vim
 

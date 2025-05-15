@@ -57,6 +57,7 @@ cask "hiddenbar"
 cask "keepingyouawake"
 cask "openinterminal-lite"
 cask "tunnelblick"
+cask "rectangle"
 
 # Fonts
 cask "font-hack"
