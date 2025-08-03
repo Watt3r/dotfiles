@@ -8,7 +8,7 @@ set -e
 
 FORCE=0
 LOG_LEVEL=2
-GITHUB_DOWNLOAD=https://github.com/Watt3r/dotfiles.git
+GITHUB_DOWNLOAD=https://github.com/oberwager/dotfiles.git
 INSTALL_DIR=~/.dotfiles
 
 CONFIG="install.conf.yaml"

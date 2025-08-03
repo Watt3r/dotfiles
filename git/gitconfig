@@ -1,10 +1,11 @@
 [user]
 	email = git@lucas.tools
-	name = Watt3r
+	name = oberwager
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGoCtrFLANtBVXxmAY0cQA6FuTaM/MOKOEoDUMwcYzOA
 
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
         
 #[url "ssh://git@github.com:"]
 #        insteadOf = https://github.com
