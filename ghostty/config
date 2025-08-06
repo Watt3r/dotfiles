@@ -8,6 +8,8 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+copy-on-select = clipboard
+
 # Theme
 palette = 0=#2b303b
 palette = 1=#bf616a
